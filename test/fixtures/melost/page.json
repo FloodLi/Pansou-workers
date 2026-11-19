@@ -1,0 +1,7 @@
+{"_note":"合成数据，依据 Go 解析逻辑构造，非真实抓取","code":200,"msg":"ok","data":{"total":3,"per_size":30,"list":[
+{"disk_id":"d1","disk_name":"<em>影盘</em>资源&amp;一","disk_pass":"pw12","disk_type":"QUARK","files":"<p>文件1</p>\r\n文件2","share_user":"alice","shared_time":"2025-05-01 12:00:00","tags":["电影"," 高清 ",1],"link":"https://pan.quark.cn/s/m111"},
+{"disk_id":"d2","disk_name":"影盘资源二","disk_pass":"","disk_type":"WHATEVER","files":"","share_user":"","shared_time":"","tags":null,"link":"https://pan.baidu.com/s/m222"},
+{"disk_id":"d3","disk_name":"影盘资源三","disk_type":"LANZOU","link":"https://lanzou.example/x"},
+{"disk_id":"d4","disk_name":"影盘资源四","link":""},
+{"disk_id":"d5","disk_name":"不相关","link":"https://pan.quark.cn/s/zz","disk_type":"QUARK"}
+]}}

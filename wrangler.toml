@@ -1,0 +1,37 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "pansou-workers"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+[observability]
+enabled = true
+
+# KV 用于搜索结果缓存。这里故意不写 id：
+# wrangler >= 4.45 的"自动资源配置"会在首次 `wrangler deploy` 时创建名为 pansou-workers-cache 的 KV 并绑定，
+# 之后每次部署自动沿用，无需再配置 KV_NAMESPACE_ID。`wrangler dev` 使用本地模拟的 KV。
+[[kv_namespaces]]
+binding = "CACHE"
+
+[vars]
+# 默认搜索的 TG 频道，逗号分隔
+CHANNELS = "tgsearchers7"
+# 必须显式列出（与原项目一致），逗号分隔
+ENABLED_PLUGINS = "haitunsou,quarkres,ouge,wanou,dyyj,ikantv,meitizy,melost,nyaa,quarksoo,zlxapp,feikuai,xiaokupan,quark4k,yunso,yunsou,cldi"
+# 尽快响应的等待窗口（秒）
+ASYNC_RESPONSE_TIMEOUT = "4"
+# 单个插件的总超时（秒），需小于 waitUntil 的 30 秒上限
+PLUGIN_TIMEOUT = "25"
+# 单次请求允许的外部子请求（fetch）总数。免费版上限 50；KV 读写另算（上限 1000），不占此额度
+SUBREQUEST_BUDGET = "48"
+# 缓存 TTL（分钟）；失败/部分结果使用更短的 TTL
+CACHE_TTL = "60"
+CACHE_PARTIAL_TTL_MINUTES = "3"
+# 单次请求最多搜索的 TG 频道数
+MAX_TG_CHANNELS = "1"
+# yunsou / cldi 等多页插件的页数上限（免费版预算友好）
+MAX_PAGES_YUNSOU = "3"
+MAX_PAGES_CLDI = "3"
+
+# 访问令牌不要写在这里，用 secret 设置：npx wrangler secret put API_TOKEN
+# （GitHub Actions 部署时会自动从仓库 Secret API_TOKEN 同步，见 .github/workflows/deploy.yml）

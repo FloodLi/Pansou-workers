@@ -1,0 +1,60 @@
+name: Deploy
+
+# 手动触发的部署：在仓库 Actions 页面选择 Deploy → Run workflow。
+# 部署前会先跑一遍类型检查与测试，通过后才发布。
+# 需要在仓库 Settings → Secrets and variables → Actions 中配置：
+#   Secrets（必需）: CLOUDFLARE_API_TOKEN（权限：Workers Scripts:Edit、Workers KV Storage:Edit）
+#                    CLOUDFLARE_ACCOUNT_ID
+#   Secrets（可选）: API_TOKEN —— 接口访问令牌；设置后部署时会同步为 Worker 的 secret，
+#                    客户端需带 `Authorization: Bearer <API_TOKEN>`；不设置则接口公开
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+
+      - name: 检查是否配置了 API_TOKEN
+        id: token
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: |
+          if [ -n "$API_TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::未配置仓库 Secret API_TOKEN，部署后接口将公开访问"
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 部署（同步 API_TOKEN）
+        if: steps.token.outputs.present == 'true'
+        uses: cloudflare/wrangler-action@v4
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          secrets: |
+            API_TOKEN
+          command: deploy
+
+      - name: 部署（无 API_TOKEN）
+        if: steps.token.outputs.present != 'true'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

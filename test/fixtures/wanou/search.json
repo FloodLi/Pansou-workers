@@ -1,0 +1,7 @@
+{"_note":"合成数据，依据 Go 解析逻辑构造，非真实抓取","code":1,"msg":"数据列表","page":1,"pagecount":1,"limit":20,"total":4,"list":[
+{"vod_id":101,"vod_name":" 测试影片 ","vod_actor":"甲,乙","vod_director":"丙","vod_area":"大陆","vod_year":"2024","vod_remarks":"HD","vod_pic":"https://img.example.com/1.jpg",
+ "vod_down_from":"KG$$$BD$$$XX$$$UC$$$BD","vod_down_url":"https://pan.quark.cn/s/abc123$$$https://pan.baidu.com/s/1xyz?pwd=ab12$$$https://example.com/foo$$$javascript:void(0)$$$https://pan.quark.cn/s/zzz999"},
+{"vod_id":102,"vod_name":"磁力片","vod_down_from":"CL","vod_down_url":"magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef01234567"},
+{"vod_id":103,"vod_name":"","vod_down_from":"KG","vod_down_url":"https://pan.quark.cn/s/skip"},
+{"vod_id":104,"vod_name":"无有效链接","vod_down_from":"KG","vod_down_url":"https://example.com/x"}
+]}

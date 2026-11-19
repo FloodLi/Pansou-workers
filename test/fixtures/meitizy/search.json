@@ -1,0 +1,8 @@
+{"_note":"合成数据，依据 Go 解析逻辑构造，非真实抓取","total":6,"data":[
+{"id":1,"title":"美体教程一","content":"夸克资源","link":"https://pan.quark.cn/s/mt111?pwd=ab12","link_type":"quark","tags":"教程","created_at":"2025-11-25T22:59:53.000Z","updated_at":""},
+{"id":2,"title":"美体教程二","content":"","link":"https://www.alipan.com/s/ali222","link_type":"alipan","tags":"","created_at":"","updated_at":"2025-10-01 12:00:00"},
+{"id":3,"title":"美体教程三","content":"","link":"https://pan.baidu.com/s/bd333?code=zz99","link_type":"unknown","tags":"","created_at":"2025-09-01","updated_at":""},
+{"id":4,"title":"美体教程四","content":"","link":"","link_type":"quark","created_at":"2025-09-01"},
+{"id":5,"title":"美体教程五","content":"","link":"not-a-url","link_type":"quark","created_at":"2025-09-01"},
+{"id":6,"title":"不相关","content":"","link":"https://pan.quark.cn/s/zz","link_type":"quark","created_at":"2025-09-01"}
+]}

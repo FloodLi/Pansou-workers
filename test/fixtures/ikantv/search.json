@@ -1,0 +1,14 @@
+{"_note":"合成数据，依据 Go 解析逻辑构造，非真实抓取","code":0,"message":"ok","data":[
+{"message_id":"m1","unique_id":"ikantv-555","datetime":"2025-04-01T10:00:00Z","title":"爱看电影","content":"简介","tags":["电影"],"images":["https://img.example.com/a.jpg"],
+ "links":[
+  {"type":"quark","url":"https://pan.quark.cn/s/qq1","password":"","datetime":"2025-04-01T10:00:00Z","work_title":"爱看电影"},
+  {"type":"QUARK ","url":"https://pan.quark.cn/s/qq2"},
+  {"type":"weird","url":"https://example.com/x"},
+  {"type":"magnet","url":"http://notmagnet"},
+  {"type":"ed2k","url":"ed2k://|file|a|1|0123456789abcdef0123456789abcdef|/"},
+  {"type":"baidu","url":"not a url"}]},
+{"message_id":"m2","unique_id":"","datetime":"","title":"爱看电影二","content":"","links":[{"type":"baidu","url":"https://pan.baidu.com/s/b1","password":"x9"}]},
+{"message_id":"","unique_id":"","title":"爱看电影无id","links":[{"type":"baidu","url":"https://pan.baidu.com/s/b2"}]},
+{"message_id":"m4","unique_id":"u4","title":"不相关","content":"","links":[{"type":"baidu","url":"https://pan.baidu.com/s/b3"}]},
+{"message_id":"m5","unique_id":"u5","title":"爱看电影无链接","links":[]}
+]}

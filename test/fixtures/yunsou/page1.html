@@ -1,0 +1,9 @@
+<!-- 合成数据，依据 Go 解析逻辑构造，非真实抓取 -->
+<html><body><div class="list">
+<div class="item" data-title="仙逆 1"><div class="title">仙逆 1</div><div class="type">来源A</div><div class="type time">2026-09-01</div>
+<button class="btn" onclick="copyText(event, 'x', 'https://pan.quark.cn/s/p1a', '')">复制</button></div>
+<div class="item" data-title="仙逆 2 &amp; 特辑"><div class="title">仙逆 2 &amp; 特辑</div><div class="type">来源A</div><div class="type time">2026-09-02</div>
+<button class="btn" @click.stop="copyText(event, 'x', 'https://pan.baidu.com/s/p1b?pwd=ab12', '')">复制</button></div>
+<div class="item" data-title="无关"><div class="title">无关</div><div class="type">来源A</div><div class="type time">2026-09-02</div>
+<button class="btn" onclick="copyText(event, 'x', 'https://pan.quark.cn/s/p1c', '')">复制</button></div>
+</div><el-pagination :total="45" layout="prev, pager"></el-pagination></body></html>

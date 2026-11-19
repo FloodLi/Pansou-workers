@@ -1,0 +1,28 @@
+{
+  "name": "pansou-workers",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PanSou 网盘搜索 API 的 Cloudflare Workers (TypeScript) 精简移植版",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run test"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "hono": "^4.13.19",
+    "node-html-parser": "^9.0.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261119.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.12",
+    "wrangler": "^4.165.0"
+  }
+}

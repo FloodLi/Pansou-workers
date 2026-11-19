@@ -1,0 +1,5 @@
+{"_note":"合成数据，依据 Go 解析逻辑构造，非真实抓取","code":1,"msg":"数据列表","list":[
+{"vod_id":201,"vod_name":"欧歌影片","vod_year":"2023","vod_area":"美国",
+ "vod_down_from":"PK$$$BD$$$ZZ$$$TY","vod_down_url":"https://mypikpak.com/s/pk111$$$https://pan.quark.cn/s/q222$$$https://pan.xunlei.com/s/xl333?pwd=ab12$$$https://example.com/no"},
+{"vod_id":202,"vod_name":"仅无效","vod_down_from":"KG","vod_down_url":"https://example.com/x#a"}
+]}

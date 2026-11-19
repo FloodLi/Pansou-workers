@@ -1,0 +1,10 @@
+{"links":{"first":"x"},"data":[
+{"type":"discussions","id":"21","attributes":{"title":"流浪地球 合集","createdAt":"2024-05-01T00:00:00+00:00"},"relationships":{"mostRelevantPost":{"data":{"type":"posts","id":"201"}}}},
+{"type":"discussions","id":"22","attributes":{"title":"流浪地球 无夸克","createdAt":"2024-05-02T00:00:00+00:00"},"relationships":{"mostRelevantPost":{"data":{"type":"posts","id":"202"}}}},
+{"type":"discussions","id":"23","attributes":{"title":"别的","createdAt":"2024-05-03T00:00:00+00:00"},"relationships":{"mostRelevantPost":{"data":{"type":"posts","id":"203"}}}}
+],"included":[
+{"type":"users","id":"201","attributes":{"username":"collide"}},
+{"type":"posts","id":"201","attributes":{"contentHtml":"<p>链接：https://pan.quark.cn/s/aaa111<br>提取码：k9k9<br>&amp;更多</p>"}},
+{"type":"posts","id":"202","attributes":{"contentHtml":"<p>https://pan.baidu.com/s/zzz</p>"}},
+{"type":"posts","id":"203","attributes":{"contentHtml":"<p>https://pan.quark.cn/s/bbb</p>"}}
+]}
